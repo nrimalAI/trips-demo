@@ -34,7 +34,7 @@ export default function HomeScreen() {
               <Image source={{uri:item.image}} style={{width:40,height:40}}/>
             </TouchableOpacity>
           )}/>
-      <Text style={{marginTop:5,fontSize:17,color:'#B0B0B0 '}}> Choose your buddy</Text>
+      <Text style={{marginTop:5,fontSize:17,color:'#B0B0B0'}}> Choose your buddy</Text>
        </View>
        <TouchableOpacity style={[{backgroundColor:selectedChatFaceData.primary},
       {padding:17,width:Dimensions.get('screen').width*0.6, borderRadius:100,alignItems:'center',marginTop:30}]}>
