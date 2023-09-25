@@ -1,4 +1,4 @@
-const BASE_URL='http://192.168.1.158:3000/api/bard'
+const BASE_URL= process.env.BASE_URL+':3000/api/bard'
 
 const getBardApi = async (userMsg) => {
   try {
