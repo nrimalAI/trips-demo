@@ -5,6 +5,6 @@ trips v0.1.0
 
 Tech Stack:
 - React native
-- Bard API
 - Next.js
 - Expo
+- React Navigation
