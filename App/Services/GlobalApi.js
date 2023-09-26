@@ -1,5 +1,4 @@
 const BASE_URL= 'http://192.168.1.158:3000/api/bard'
-console.log(process.env.BASE_URL)
 const getBardApi = async (userMsg) => {
   try {
     const response = await fetch(`${BASE_URL}?ques=${userMsg}`);
