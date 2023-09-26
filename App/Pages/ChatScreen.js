@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/native'
 import { Bubble, GiftedChat, InputToolbar, Send } from 'react-native-gifted-chat'
 import GlobalApi from '../Services/GlobalApi';
 
-export default function ChatScreen() {
+  export default function ChatScreen() {
     const param = useRoute().params; 
     const [messages, setMessages] = useState([])
     const [selectedChatFaceData, setSelectedChatFaceData] = useState([]); 
@@ -36,8 +36,22 @@ export default function ChatScreen() {
 
     const getChatResp=(msg)=>{
         GlobalApi.getBardApi(msg).then(rsp=>{
-            console.log(rsp);
-        })
+            if(rsp.resp[1].content){
+               const apiRsp ={
+                //_ Signifies variable is not being actively used or referenced
+                // Math.random so keys will be unique
+                _id: Math.random() * (9999999 - 1),
+                text: rsp.resp[1].content,
+                createdAt: new Date(),
+                user: {
+                  _id: 2,
+                  name: 'React Native',
+                  avatar: param.selectedFace?.image,
+                }
+              }
+              setMessages(previousMessages => GiftedChat.append(previousMessages, apiRsp ))
+            }
+        }) 
     }
        
   return (
